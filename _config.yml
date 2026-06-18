@@ -5,6 +5,7 @@ author: Rexlin
 url: "https://ijaffery.github.io"
 baseurl: "/genai-study-notes"
 markdown: kramdown
+
 kramdown:
   math_engine: mathjax
   math_engine_opts:
@@ -18,10 +19,6 @@ exclude:
   - .context.md
   - check_*.py
   - _fix*.py
-plugins:
-  - jekyll-relative-links
-relative_links:
-  enabled: true
-  collections: true
+plugins: [jekyll-watch]
 include:
   - topics
