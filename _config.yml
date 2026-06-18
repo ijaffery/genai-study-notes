@@ -1,0 +1,10 @@
+# _config.yml
+title: GenAI From Scratch — Topic Notes
+description: Topic-based study notes for the GenAI From Scratch roadmap
+author: Rexlin
+baseurl: ""
+url: ""
+markdown: kramdown
+exclude:
+  - README.md
+  - Gemfile

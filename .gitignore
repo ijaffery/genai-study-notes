@@ -1,0 +1,14 @@
+# Jekyll build output
+_site/
+.jekyll-cache/
+
+# Context handoff file (for the AI)
+.context.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Gem
+*.gem
+*.gemspec

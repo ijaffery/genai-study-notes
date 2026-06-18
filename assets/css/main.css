@@ -1,0 +1,775 @@
+/* ═══════════════════════════════════════════
+   Theme variables
+   ═══════════════════════════════════════════ */
+:root {
+  --bg: #fafafa;
+  --bg-card: #ffffff;
+  --bg-inline: #f3f4f6;
+  --bg-code: #1e1e1e;
+  --text: #1a1a1a;
+  --text-muted: #666;
+  --text-link: #2563eb;
+  --text-secondary: #6b7280;
+  --border: #e5e7eb;
+  --border-light: #f3f4f6;
+  --accent: #6366f1;
+  --accent-light: #eef2ff;
+  --accent-hover: #e0e7ff;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --radius: 12px;
+  --phase1: #6366f1;
+  --phase2: #8b5cf6;
+  --phase3: #3b82f6;
+  --phase4: #06b6d4;
+  --phase5: #10b981;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --bg-card: #1e293b;
+  --bg-inline: #334155;
+  --bg-code: #0c1929;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-link: #818cf8;
+  --text-secondary: #94a3b8;
+  --border: #334155;
+  --border-light: #1e293b;
+  --accent: #818cf8;
+  --accent-light: #1e1b4b;
+  --accent-hover: #312e81;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Base ── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.75;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+  color: var(--text);
+  background: var(--bg);
+  transition: background 0.3s, color 0.3s;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Reading progress bar ── */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--phase1), var(--phase2), var(--phase3), var(--phase4), var(--phase5));
+  z-index: 999;
+  transition: width 0.1s ease-out;
+}
+
+/* ── Logo / Nav ── */
+#logo {
+  display: block;
+  margin-bottom: 2rem;
+  color: var(--text-link);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+#logo:hover { text-decoration: underline; }
+
+/* ── Theme Toggle ── */
+.theme-toggle {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 100;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow);
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  user-select: none;
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+  transform: scale(1.08);
+}
+
+/* ── Headings ── */
+h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2.15rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+}
+h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--border);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* ── Paragraphs & Text ── */
+p { margin-bottom: 1rem; }
+.subtitle {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+.source { margin-bottom: 2rem; font-size: 0.85rem; }
+.source a { color: var(--text-secondary); }
+
+/* ── Images ── */
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s;
+}
+img:hover {
+  box-shadow: var(--shadow-hover);
+}
+img + em {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* ── Code & Pre ── */
+pre {
+  background: var(--bg-code);
+  color: #d4d4d4;
+  padding: 1.1rem 1.25rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  font-size: 0.88em;
+  font-family: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, monospace;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+pre::-webkit-scrollbar { height: 6px; }
+pre::-webkit-scrollbar-track { background: transparent; }
+pre::-webkit-scrollbar-thumb { background: #555; border-radius: 3px; }
+code {
+  background: var(--bg-inline);
+  padding: 0.2em 0.45em;
+  border-radius: 5px;
+  font-size: 0.88em;
+  font-family: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, monospace;
+}
+pre code { background: none; color: inherit; padding: 0; }
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  font-size: 0.92rem;
+}
+th, td {
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+th {
+  background: var(--bg-inline);
+  font-weight: 600;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  border-left: 4px solid var(--accent);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  background: var(--accent-light);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ── Links ── */
+a {
+  color: var(--text-link);
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+a:hover { opacity: 0.8; }
+
+/* ── Lists ── */
+ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+ul ul { margin-left: 1.5rem; margin-top: 0.3rem; }
+ul ul li { margin-bottom: 0.25rem; }
+
+/* ── HR ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
+/* ═══════════════════════════════════════════
+   Main Landing Page — TOC Cards
+   ═══════════════════════════════════════════ */
+
+/* Phase section: h2 followed by ul forms a logical group. Style ul as a card. */
+h2 + ul {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 0 0 var(--radius) var(--radius);
+  margin-top: -1px;
+  padding: 0.75rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  list-style: none;
+  transition: box-shadow 0.2s;
+}
+h2 + ul:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Phase heading — only when followed by a list (TOC pages) */
+h2:has(+ ul) {
+  position: relative;
+  padding-left: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--bg-card);
+  box-shadow: var(--shadow);
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+}
+h2:has(+ ul)::before {
+  position: absolute;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Phase number from heading ID */
+h2[id*="phase-1"]:has(+ ul)::before { background: var(--phase1); content: "1"; }
+h2[id*="phase-2"]:has(+ ul)::before { background: var(--phase2); content: "2"; }
+h2[id*="phase-3"]:has(+ ul)::before { background: var(--phase3); content: "3"; }
+h2[id*="phase-4"]:has(+ ul)::before { background: var(--phase4); content: "4"; }
+h2[id*="phase-5"]:has(+ ul)::before { background: var(--phase5); content: "5"; }
+
+/* Phase accent color on heading */
+h2[id*="phase-1"]:has(+ ul) { border-top: 3px solid var(--phase1); }
+h2[id*="phase-2"]:has(+ ul) { border-top: 3px solid var(--phase2); }
+h2[id*="phase-3"]:has(+ ul) { border-top: 3px solid var(--phase3); }
+h2[id*="phase-4"]:has(+ ul) { border-top: 3px solid var(--phase4); }
+h2[id*="phase-5"]:has(+ ul) { border-top: 3px solid var(--phase5); }
+
+/* TOC list items */
+h2:has(+ ul) + ul > li {
+  padding: 0.55rem 1rem;
+  margin: 0;
+  transition: background 0.15s;
+}
+h2:has(+ ul) + ul > li:hover {
+  background: var(--bg-inline);
+}
+h2:has(+ ul) + ul > li > a, h2:has(+ ul) + ul > li .toc-topic a {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Nested sub-topics */
+h2:has(+ ul) + ul li > ul {
+  list-style: none;
+  margin: 0.3rem 0 0 1.5rem;
+  padding: 0.4rem 0.75rem;
+  background: var(--bg-inline);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+h2:has(+ ul) + ul li > ul li {
+  padding: 0.25rem 0;
+  margin: 0;
+}
+h2:has(+ ul) + ul li > ul li a {
+  font-weight: 500;
+  font-size: 0.92rem;
+  display: inline;
+}
+
+/* ═══════════════════════════════════════════
+   Phase Landing Pages — Section Cards
+   ═══════════════════════════════════════════ */
+
+/* Section headings — detected by having a description link directly after */
+h2:has(+ p a) {
+  position: relative;
+  padding-left: 1rem !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 0.6rem !important;
+  padding-bottom: 0.5rem !important;
+  border-bottom: 2px solid var(--border) !important;
+  font-size: 1.35rem !important;
+}
+h2:has(+ p a)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  bottom: 0.15em;
+  width: 4px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+/* Phase color accents for section headings */
+main:has(h2:has(+ p a)) h2:has(+ p a)::before {
+  background: var(--accent);
+}
+
+/* Description paragraph (link right after h2) */
+h2:has(+ p a) + p {
+  margin-bottom: 1rem;
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  padding-left: 1rem;
+  border-left: 2px solid var(--border-light);
+  line-height: 1.6;
+}
+
+/* Topic list items as styled cards */
+h2:has(+ p a) + p + ul {
+  list-style: none;
+  margin-left: 1rem;
+  padding: 0;
+}
+h2:has(+ p a) + p + ul li {
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.4rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+h2:has(+ p a) + p + ul li:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transform: translateX(2px);
+}
+h2:has(+ p a) + p + ul li a {
+  font-weight: 500;
+}
+h2:has(+ p a) + p + ul li.sub {
+  margin-left: 1.25rem;
+  font-size: 0.95rem;
+}
+
+/* Resource links as styled badges */
+p:has(strong) {
+  margin-top: 1.25rem;
+  padding: 0.85rem 1rem;
+  background: var(--bg-inline);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+p:has(strong) a {
+  display: inline-block;
+  padding: 0.3em 0.75em;
+  margin: 0.2rem 0.3rem 0.2rem 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-link);
+  transition: all 0.15s;
+}
+p:has(strong) a:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  opacity: 1;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.15);
+}
+p:has(strong) strong {
+  color: var(--text-secondary);
+  margin-right: 0.25rem;
+}
+
+/* ═══════════════════════════════════════════
+   Concept Pages — Enhanced Typography
+   ═══════════════════════════════════════════ */
+
+/* First h1 on concept pages gets an accent bar */
+.content > h1 {
+  position: relative;
+  padding-bottom: 0.6rem;
+  padding-left: 0.5rem;
+  border-bottom: 3px solid var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+/* Key Takeaways / Summary sections get a subtle left accent */
+h2:contains("Key Takeaways") {
+  position: relative;
+  padding-left: 0.5rem;
+}
+h2:contains("Key Takeaways")::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  bottom: 0.2em;
+  width: 4px;
+  border-radius: 2px;
+  background: var(--phase5);
+}
+
+/* Numbered takeaways as styled list */
+.content > h2:contains("Key Takeaways") + ol {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+  counter-reset: takeaway;
+}
+.content > h2:contains("Key Takeaways") + ol li {
+  padding: 0.7rem 0 0.7rem 3rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  border-bottom: 1px solid var(--border-light);
+}
+.content > h2:contains("Key Takeaways") + ol li::before {
+  counter-increment: takeaway;
+  content: counter(takeaway);
+  position: absolute;
+  left: 0;
+  top: 0.7rem;
+  width: 26px;
+  height: 26px;
+  background: var(--accent-light);
+  color: var(--accent);
+  border-radius: 50%;
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ═══════════════════════════════════════════
+   Callout / Tip boxes
+   ═══════════════════════════════════════════ */
+.callout {
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  margin: 1.25rem 0;
+  font-size: 0.95rem;
+}
+.callout.tip {
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+}
+.callout.tip::before {
+  content: '💡 Tip: ';
+  font-weight: 600;
+}
+.callout.note {
+  background: #eff6ff;
+  border-left: 4px solid #3b82f6;
+}
+[data-theme="dark"] .callout.note {
+  background: #172554;
+}
+.callout.note::before {
+  content: '📝 Note: ';
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════
+   Exercise Blocks — Card-style design
+   ═══════════════════════════════════════════ */
+
+/* ── Exercise card ── */
+.exercise {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s;
+}
+.exercise:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Exercise header */
+.exercise-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: var(--accent-light);
+  border-bottom: 1px solid var(--border);
+}
+.exercise-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.exercise-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Exercise body (question + content) */
+.exercise-body {
+  padding: 1rem 1.25rem;
+  color: var(--text);
+}
+.exercise-body > p,
+.exercise-body > ul,
+.exercise-body > ol,
+.exercise-body > pre,
+.exercise-body > table {
+  margin-bottom: 0.75rem;
+}
+.exercise-body > *:last-child { margin-bottom: 0; }
+
+/* ── Hint — info / lightbulb style ── */
+.exercise-hint {
+  margin-top: 0.75rem;
+  background: var(--accent-light);
+  border: 1px solid var(--border);
+  border-left: 4px solid #3b82f6;
+  border-radius: 6px;
+}
+.exercise-hint summary {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #3b82f6;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  user-select: none;
+}
+.exercise-hint summary::before {
+  content: '💡';
+  font-size: 1rem;
+}
+.exercise-hint summary::after {
+  content: '';
+  margin-left: auto;
+  transition: transform 0.2s;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid #3b82f6;
+}
+.exercise-hint[open] summary::after {
+  transform: rotate(90deg);
+}
+.exercise-hint summary:hover { color: #1d4ed8; }
+.exercise-hint .hint-content {
+  padding: 0.5rem 1rem 0.75rem 2rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ── Solution — success / check style ── */
+.exercise-solution {
+  margin-top: 0.75rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-left: 4px solid #22c55e;
+  border-radius: 6px;
+}
+[data-theme="dark"] .exercise-solution {
+  background: #052e16;
+  border-color: #166534;
+  border-left-color: #22c55e;
+}
+.exercise-solution summary {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #15803d;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  user-select: none;
+}
+[data-theme="dark"] .exercise-solution summary {
+  color: #4ade80;
+}
+.exercise-solution summary::before {
+  content: '✅';
+  font-size: 1rem;
+}
+.exercise-solution summary::after {
+  content: '';
+  margin-left: auto;
+  transition: transform 0.2s;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid #22c55e;
+}
+.exercise-solution[open] summary::after {
+  transform: rotate(90deg);
+}
+.exercise-solution summary:hover { color: #166534; }
+[data-theme="dark"] .exercise-solution summary:hover { color: #86efac; }
+.exercise-solution .solution-content {
+  padding: 0.5rem 1rem 0.75rem 2rem;
+  font-size: 0.92rem;
+  color: #14532d;
+  margin: 0;
+}
+[data-theme="dark"] .exercise-solution .solution-content {
+  color: #bbf7d0;
+}
+
+/* ── Quiz — clickable options ── */
+.quiz {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+  padding: 0.5rem 0;
+}
+.opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.65rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-size: 0.95rem;
+  background: var(--bg-card);
+  line-height: 1.6;
+}
+.opt:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+.opt::before {
+  content: '○';
+  font-size: 1rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: color 0.15s;
+}
+.opt:hover::before { color: var(--accent); }
+
+/* Correct answer */
+.opt.correct {
+  border-color: #22c55e;
+  background: #f0fdf4;
+  color: #15803d;
+}
+[data-theme="dark"] .opt.correct {
+  background: #052e16;
+  color: #4ade80;
+}
+.opt.correct::before {
+  content: '●';
+  color: #22c55e;
+}
+
+/* Wrong answer */
+.opt.wrong {
+  border-color: #ef4444;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+[data-theme="dark"] .opt.wrong {
+  background: #450a0a;
+  color: #fca5a5;
+}
+.opt.wrong::before {
+  content: '●';
+  color: #ef4444;
+}
+
+/* Answered state — lock all options */
+.opt.answered { cursor: default; pointer-events: none; }
+.quiz.answered .opt { cursor: default; }
+.quiz.answered .opt:hover { border-color: inherit; background: inherit; }
+
+/* ── Small helper: hide default details marker ── */
+details summary {
+  list-style: none;
+}
+details summary::-webkit-details-marker { display: none; }
