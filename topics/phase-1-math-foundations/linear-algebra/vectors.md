@@ -22,11 +22,11 @@ A vector is an **arrow** defined by:
 
 Same length + same direction = same vector, regardless of position.
 
-![Magnitude and direction](/topics/phase-1-math-foundations/linear-algebra/images/introduction/magnitude-direction.svg)
+![Magnitude and direction]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/introduction/magnitude-direction.svg)
 
 2D vectors in a plane; 3D vectors in our space:
 
-![2D vs 3D vectors](/topics/phase-1-math-foundations/linear-algebra/images/introduction/2d-3d-vectors.jpg)
+![2D vs 3D vectors]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/introduction/2d-3d-vectors.jpg)
 
 ### 1.2 Computer Science — Ordered Lists
 
@@ -46,7 +46,7 @@ A vector is **anything** where you can sensibly:
 
 Most abstract view. Hints that addition and scaling are the core operations.
 
-![Three perspectives](/topics/phase-1-math-foundations/linear-algebra/images/introduction/perspectives.svg)
+![Three perspectives]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/introduction/perspectives.svg)
 
 ---
 
@@ -60,22 +60,22 @@ Most abstract view. Hints that addition and scaling are the core operations.
 4. **Tick marks** — spaced by the unit
 5. **Grid lines** — extending tick marks across the plane
 
-![Axes](/topics/phase-1-math-foundations/linear-algebra/images/coordinate-systems/axes.svg)
-![Origin](/topics/phase-1-math-foundations/linear-algebra/images/coordinate-systems/origin.svg)
-![Tick marks](/topics/phase-1-math-foundations/linear-algebra/images/coordinate-systems/tick-marks.svg)
-![Grid](/topics/phase-1-math-foundations/linear-algebra/images/coordinate-systems/grid.svg)
+![Axes]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/coordinate-systems/axes.svg)
+![Origin]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/coordinate-systems/origin.svg)
+![Tick marks]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/coordinate-systems/tick-marks.svg)
+![Grid]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/coordinate-systems/grid.svg)
 
 ### 2.2 Vectors as Arrows from the Origin
 
 **Convention:** Picture every vector as an arrow **starting at the origin**.
 
-![Vector as arrow from origin](/topics/phase-1-math-foundations/linear-algebra/images/coordinate-systems/vector-arrow.svg)
+![Vector as arrow from origin]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/coordinate-systems/vector-arrow.svg)
 
 Coordinates $(x, y)$ are *instructions*:
 - Walk $x$ units along the x-axis (right = positive, left = negative)
 - Then walk $y$ units parallel to the y-axis (up = positive, down = negative)
 
-![Coordinates as instructions](/topics/phase-1-math-foundations/linear-algebra/images/coordinate-systems/coordinates.svg)
+![Coordinates as instructions]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/coordinate-systems/coordinates.svg)
 
 Vectors written **vertically** with brackets:
 
@@ -87,7 +87,7 @@ Every pair of numbers → exactly one vector. Every vector → exactly one pair.
 
 $$\begin{bmatrix} x \\ y \\ z \end{bmatrix}$$
 
-![3D coordinates](/topics/phase-1-math-foundations/linear-algebra/images/coordinate-systems/coordinates-3d.svg)
+![3D coordinates]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/coordinate-systems/coordinates-3d.svg)
 
 ---
 
@@ -101,13 +101,13 @@ $$\begin{bmatrix} x \\ y \\ z \end{bmatrix}$$
 1. Slide vector **b** so its *tail* touches the *tip* of vector **a**
 2. The sum **a + b** = arrow from origin to tip of moved **b**
 
-![Addition prep](/topics/phase-1-math-foundations/linear-algebra/images/vector-operations/addition-prep.svg)
+![Addition prep]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/vector-operations/addition-prep.svg)
 
-![Sum of two vectors](/topics/phase-1-math-foundations/linear-algebra/images/vector-operations/addition.svg)
+![Sum of two vectors]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/vector-operations/addition.svg)
 
 **Why:** Each vector = a movement. Move along **a**, then **b**, equals moving along **a + b** directly. (Same idea as $2 + 5 = 7$ on a number line.)
 
-![Number line analogy](/topics/phase-1-math-foundations/linear-algebra/images/vector-operations/number-line.svg)
+![Number line analogy]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/vector-operations/number-line.svg)
 
 **Numerical rule — add component-wise:**
 
@@ -119,7 +119,7 @@ $$\begin{bmatrix} 1 \\ 2 \end{bmatrix} + \begin{bmatrix} 3 \\ -1 \end{bmatrix} =
 
 Walk 1 right, 2 up, 3 right, 1 down → reorganize to $(1+3)$ right, $(2-1)$ up = **4 right, 1 up**.
 
-![Component-wise addition](/topics/phase-1-math-foundations/linear-algebra/images/vector-operations/addition-components.svg)
+![Component-wise addition]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/vector-operations/addition-components.svg)
 
 ### 3.2 Scaling (Multiplying by a Scalar)
 
@@ -131,9 +131,9 @@ Multiplying a vector by a number **scales** it — stretching, squishing, or fli
 | $\frac{1}{3} \cdot \vec{v}$ | Squishes it down to **one-third** its original length |
 | $-1.5 \cdot \vec{v}$ | **Flips** the vector around, then stretches by a factor of **1.5** |
 
-![Scaling by 2x](/topics/phase-1-math-foundations/linear-algebra/images/vector-operations/scaling-2x.svg)
-![Scaling by 1/3](/topics/phase-1-math-foundations/linear-algebra/images/vector-operations/scaling-thirds.svg)
-![Scaling by -1.5](/topics/phase-1-math-foundations/linear-algebra/images/vector-operations/scaling-negative.svg)
+![Scaling by 2x]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/vector-operations/scaling-2x.svg)
+![Scaling by 1/3]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/vector-operations/scaling-thirds.svg)
+![Scaling by -1.5]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/vector-operations/scaling-negative.svg)
 
 This process of stretching, squishing, and sometimes reversing direction is called *scaling*. When a number like `2`, `1/3`, or `-1.5` acts this way — scaling some vector — it's called a *scalar*. In linear algebra, *scalar* is used interchangeably with *number*, since one of the main things numbers do is scale vectors.
 

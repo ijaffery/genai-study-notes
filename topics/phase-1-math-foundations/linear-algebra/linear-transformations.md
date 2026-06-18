@@ -22,24 +22,24 @@ So why say "transformation" instead of "function"? Because it suggests a way to 
 
 If a transformation takes an input vector to an output vector, imagine that input vector **moving** to its output:
 
-![Single vector transformation](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/transformations-are-functions/vector-transformation.svg)
+![Single vector transformation]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/transformations-are-functions/vector-transformation.svg)
 
 To understand the transformation as a whole, imagine **every possible vector** moving to its corresponding output:
 
-![All vectors transform](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/transformations-are-functions/transform-vectors.svg)
+![All vectors transform]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/transformations-are-functions/transform-vectors.svg)
 
 It gets very crowded with all vectors as arrows, so let's represent each vector as **a single point** — the point where its tip sits. Now we watch every point in space move to some other point:
 
-![Many-point transformation](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/transformations-are-functions/many-points-transformation.svg)
+![Many-point transformation]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/transformations-are-functions/many-points-transformation.svg)
 
 For 2D transformations, we use an **infinite grid** to get a feel for the shape of the transformation. A static copy of the original grid helps track where everything ends up:
 
-![Grid transformation](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/transformations-are-functions/transform-grid.svg)
+![Grid transformation]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/transformations-are-functions/transform-grid.svg)
 
 This visualization technique can reveal beautiful patterns:
 
-![Example: parabolic transformation](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/transformations-are-functions/example-parabola.jpg)
-![Example: circular transformation](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/transformations-are-functions/example-circle.jpg)
+![Example: parabolic transformation]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/transformations-are-functions/example-parabola.jpg)
+![Example: circular transformation]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/transformations-are-functions/example-circle.jpg)
 
 ---
 
@@ -52,31 +52,31 @@ Visually, a transformation is **linear** if it satisfies two conditions:
 1. **All lines must remain lines** — they don't get curved
 2. **The origin must remain fixed** in place
 
-![Lines remain lines, origin fixed](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/what-makes-linear/lines-remain-lines-origin-fixed.jpg)
+![Lines remain lines, origin fixed]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/what-makes-linear/lines-remain-lines-origin-fixed.jpg)
 
 Examples of non-linear transformations:
 
 - **Curved lines:** Lines get bent → not linear
-  ![Non-linear: curved](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/what-makes-linear/nonlinear-curved.jpg)
+  ![Non-linear: curved]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/what-makes-linear/nonlinear-curved.jpg)
 
 - **Moving origin:** The origin shifts position → not linear
-  ![Non-linear: origin moves](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/what-makes-linear/nonlinear-origin-moves.jpg)
+  ![Non-linear: origin moves]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/what-makes-linear/nonlinear-origin-moves.jpg)
 
 - **Hidden curvature:** Horizontal and vertical lines look straight, but diagonal lines curve → not linear
-  ![Non-linear: diagonal curves](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/what-makes-linear/nonlinear-diagonal.jpg)
-  ![Diagonal lines get curved](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/what-makes-linear/nonlinear-diagonal-curved.jpg)
+  ![Non-linear: diagonal curves]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/what-makes-linear/nonlinear-diagonal.jpg)
+  ![Diagonal lines get curved]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/what-makes-linear/nonlinear-diagonal-curved.jpg)
 
 A linear transformation **keeps grid lines parallel and evenly spaced**, though it can change angles between perpendicular lines:
 
-![Parallel, evenly-spaced grid lines](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/what-makes-linear/grid-lines-parallel.jpg)
+![Parallel, evenly-spaced grid lines]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/what-makes-linear/grid-lines-parallel.jpg)
 
 A simple example: **rotation about the origin**:
 
-![Rotation about origin](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/what-makes-linear/example-rotate.jpg)
+![Rotation about origin]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/what-makes-linear/example-rotate.jpg)
 
 **Which of the following are linear transformations?**
 
-![Question: identify linear transforms](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/what-makes-linear/question1.jpg)
+![Question: identify linear transforms]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/what-makes-linear/question1.jpg)
 
 ---
 
@@ -86,35 +86,35 @@ A simple example: **rotation about the origin**:
 
 How do you describe a transformation numerically? If you wanted to program an animation, what formula tells you where a given vector lands?
 
-![How to describe a transformation](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/how-to-describe.svg)
+![How to describe a transformation]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/how-to-describe.svg)
 
 Here's the stunning insight: **you only need to record where the two basis vectors $\hat{\imath}$ and $\hat{\jmath}$ go**, and everything else follows automatically.
 
-![Record where basis vectors land](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/record-basis.svg)
+![Record where basis vectors land]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/record-basis.svg)
 
 ### 3.2 Why Tracking Basis Vectors Is Enough
 
 Consider a vector $\vec{\mathbf{v}}$ with coordinates $\begin{bmatrix}-1\\2\end{bmatrix}$, meaning it equals $-1\hat{\imath} + 2\hat{\jmath}$:
 
-![Linear transformation setup](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/linear-setup.svg)
+![Linear transformation setup]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/linear-setup.svg)
 
 Apply some transformation and follow all three vectors. The defining property of linear transformations — **grid lines remain parallel and evenly spaced** — has a powerful consequence:
 
 The place where $\vec{\mathbf{v}}$ lands will be **$(-1)$ times the vector where $\hat{\imath}$ landed, plus $2$ times the vector where $\hat{\jmath}$ landed**:
 
-![The transformation in action](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/linear-transformation.svg)
+![The transformation in action]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/linear-transformation.svg)
 
 In other words: **$\vec{\mathbf{v}}$ started as a linear combination of $\hat{\imath}$ and $\hat{\jmath}$, and it ends up at the same linear combination of where those two basis vectors landed**:
 
-![Same linear combination after transform](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/linear-combination.svg)
+![Same linear combination after transform]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/linear-combination.svg)
 
 This gives us a technique to deduce where any vector lands **without needing to watch the transformation directly**:
 
-![Technique for finding output](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/technique.svg)
+![Technique for finding output]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/technique.svg)
 
 This works for **any** vector. Given a transformation that maps $\hat{\imath} \to \begin{bmatrix} 1 \\ -2 \end{bmatrix}$ and $\hat{\jmath} \to \begin{bmatrix} 3 \\ 0 \end{bmatrix}$:
 
-![Many vectors transform](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/many-vectors.svg)
+![Many vectors transform]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/many-vectors.svg)
 
 For a general vector with coordinates $(x, y)$:
 
@@ -130,25 +130,25 @@ We package these four numbers into a **2×2 matrix**, where the **columns** are 
 
 $$\begin{bmatrix} \uparrow & \uparrow \\ \left|\phantom{\begin{smallmatrix}\uparrow\end{smallmatrix}}\right| & \left|\phantom{\begin{smallmatrix}\uparrow\end{smallmatrix}}\right| \\ \hat{\imath}_{\text{new}} & \hat{\jmath}_{\text{new}} \\ \left|\phantom{\begin{smallmatrix}\downarrow\end{smallmatrix}}\right| & \left|\phantom{\begin{smallmatrix}\downarrow\end{smallmatrix}}\right| \\ \downarrow & \downarrow \end{bmatrix}$$
 
-![Matrix notation](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/matrix-notation.svg)
+![Matrix notation]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/matrix-notation.svg)
 
 To find where a vector goes, **multiply its coordinates by the corresponding column, then add**:
 
-![Matrix input-output](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/matrix-input-output.svg)
+![Matrix input-output]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/matrix-input-output.svg)
 
 For a general matrix $\begin{bmatrix} a & b \\ c & d \end{bmatrix}$ and vector $\begin{bmatrix} x \\ y \end{bmatrix}$:
 
 $$\begin{bmatrix} a & b \\ c & d \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = x\begin{bmatrix} a \\ c \end{bmatrix} + y\begin{bmatrix} b \\ d \end{bmatrix} = \begin{bmatrix} ax + by \\ cx + dy \end{bmatrix}$$
 
-![General formula](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/matrix-general.svg)
+![General formula]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/matrix-general.svg)
 
 The old way: high schoolers memorize "multiply across rows, down columns" with no intuition.
 
-![Traditional view](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/matrix-intuition.svg)
+![Traditional view]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/matrix-intuition.svg)
 
 The new way: **columns are transformed basis vectors, and the result is a linear combination of those columns**. This is *actual understanding*.
 
-![Visual intuition](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/matrix-intuition-visual.svg)
+![Visual intuition]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/matrices/matrix-intuition-visual.svg)
 
 ---
 
@@ -165,11 +165,11 @@ The rotation matrix has these as columns:
 
 $$\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$$
 
-![Rotation](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/examples/rotation.svg)
+![Rotation]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/examples/rotation.svg)
 
 Any vector after 90° CCW rotation = multiply by this matrix:
 
-![Rotation matrix applied](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/examples/rotation-matrix.svg)
+![Rotation matrix applied]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/examples/rotation-matrix.svg)
 
 ### 4.2 Shear
 
@@ -180,10 +180,10 @@ A **shear** transformation — one column stays fixed, the other shifts:
 
 $$\begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$$
 
-![Shear](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/examples/shear.svg)
+![Shear]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/examples/shear.svg)
 
-![Shear matrix](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/examples/shear-matrix.svg)
-![Shear matrix formula](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/examples/shear-matrix-tex.svg)
+![Shear matrix]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/examples/shear-matrix.svg)
+![Shear matrix formula]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/examples/shear-matrix-tex.svg)
 
 ### 4.3 Reading a Matrix as a Transformation
 
@@ -193,7 +193,7 @@ Given a matrix with columns $\begin{bmatrix} 1 \\ 2 \end{bmatrix}$ and $\begin{b
 
 If the two columns of a matrix are **linearly dependent** (one is a scaled version of the other), the transformation **squishes all of 2D space onto a single line** — the 1D span of those two vectors:
 
-![Linearly dependent columns](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/examples/linearly-dependent.svg)
+![Linearly dependent columns]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/examples/linearly-dependent.svg)
 
 This is a geometric interpretation of linear dependence: **the transformation collapses dimensions**.
 
@@ -218,14 +218,14 @@ Apply the transformation, using both properties:
 
 $$T(\vec{\mathbf{v}}) = T(-1\hat{\imath} + 2\hat{\jmath}) = -1 \cdot T(\hat{\imath}) + 2 \cdot T(\hat{\jmath})$$
 
-![Linear combination before](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/formal-properties/linear-comb-before.svg)
-![Linear combination after](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/formal-properties/linear-comb-after.svg)
+![Linear combination before]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/formal-properties/linear-comb-before.svg)
+![Linear combination after]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/formal-properties/linear-comb-after.svg)
 
 The transformation of any vector = the same linear combination of the **transformed basis vectors**.
 
 This is why the formal algebraic properties and the geometric notion of "linearity" are two sides of the same coin. Both imply: **if you know where $\hat{\imath}$ and $\hat{\jmath}$ land, you know everything**.
 
-![Applying the transformation](/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/formal-properties/applying-transformation.svg)
+![Applying the transformation]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-transformations/formal-properties/applying-transformation.svg)
 
 ---
 

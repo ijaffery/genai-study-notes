@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title != site.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
   <script>
     // Theme: read saved preference or respect OS preference
     (function() {
@@ -41,14 +41,14 @@
       update();
     })();
   </script>
-  <script src="/assets/js/exercises.js" defer></script>
+  <script src="{{ site.baseurl }}/assets/js/exercises.js" defer></script>
 </head>
 <body>
   <div id="progress-bar"></div>
   <button class="theme-toggle" id="themeToggle" title="Toggle light/dark mode">
     <span id="themeIcon">🌙</span>
   </button>
-  <a href="/" id="logo">GenAI Notes</a>
+  <a href="{{ site.baseurl }}/{% if page.layout == 'page' %}{{ '/' }}{% else %}{{ '/' }}{% endif %}" id="logo">GenAI Notes</a>
   <div class="content">
     {{ content }}
   </div>

@@ -23,7 +23,7 @@ In the standard $xy$-coordinate system, two special vectors define everything:
 
 Together, they form the **basis** of the coordinate system.
 
-![Unit vectors $\hat{\imath}$ and $\hat{\jmath}$](/topics/phase-1-math-foundations/linear-algebra/images/span/unit-vectors.svg)
+![Unit vectors $\hat{\imath}$ and $\hat{\jmath}$]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/span/unit-vectors.svg)
 
 ### 1.2 Coordinates Are Instructions for Scaling
 
@@ -33,7 +33,7 @@ $$\begin{bmatrix} 3 \\ -2 \end{bmatrix} = 3 \cdot \hat{\imath} + (-2) \cdot \hat
 
 The x-coordinate scales $\hat{\imath}$ (stretch by 3), the y-coordinate scales $\hat{\jmath}$ (flip and stretch by 2), and the result is their sum.
 
-![Coordinates as scalars of basis vectors](/topics/phase-1-math-foundations/linear-algebra/images/span/coordinates-as-scalars.svg)
+![Coordinates as scalars of basis vectors]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/span/coordinates-as-scalars.svg)
 
 This reframing — coordinates as *scalars multiplying basis vectors* — is the key to understanding span.
 
@@ -49,9 +49,9 @@ Take two vectors pointing in different directions:
 
 What vectors can you reach by scaling each and adding them? **Every 2D vector.** Different basis vectors give you a different way to go back and forth between pairs of numbers and vectors, but the association is different from the standard $\hat{\imath}$, $\hat{\jmath}$ basis.
 
-![Choosing different basis vectors](/topics/phase-1-math-foundations/linear-algebra/images/different-basis/different-basis-vectors.svg)
+![Choosing different basis vectors]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/different-basis/different-basis-vectors.svg)
 
-![All 2D vectors are reachable](/topics/phase-1-math-foundations/linear-algebra/images/different-basis/all-vectors-reachable.svg)
+![All 2D vectors are reachable]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/different-basis/all-vectors-reachable.svg)
 
 $$\begin{bmatrix} -0.8 \\ 1.3 \end{bmatrix} \neq \begin{bmatrix} 3.1 \\ -2.9 \end{bmatrix}$$
 
@@ -73,17 +73,17 @@ The word comes from what scalar multiplication produces:
 
 Multiplying a scalar by a vector traces out an **infinite line through the origin**. A linear combination combines two such lines.
 
-![Scalar multiplication traces lines](/topics/phase-1-math-foundations/linear-algebra/images/linear-combination/scalar-lines.svg)
+![Scalar multiplication traces lines]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-combination/scalar-lines.svg)
 
 ### 3.2 Three Cases
 
 **Case 1 — General position (most pairs):** Let both scalars range freely, and you can reach **every point on the 2D plane**. Every 2D vector is within your grasp.
 
-![Free scalars reach the full plane](/topics/phase-1-math-foundations/linear-algebra/images/linear-combination/free-scalars.svg)
+![Free scalars reach the full plane]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-combination/free-scalars.svg)
 
 **Case 2 — Collinear (vectors line up):** The two lines from scalar multiplication are the *same* line. Adding them can't reach outside that line. You're stuck on a single line.
 
-![Collinear vectors span only a line](/topics/phase-1-math-foundations/linear-algebra/images/linear-combination/dependent-vectors.svg)
+![Collinear vectors span only a line]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/linear-combination/dependent-vectors.svg)
 
 **Case 3 — Zero vectors:** Both vectors are $\vec{0}$, and you're stuck at the origin.
 
@@ -95,7 +95,7 @@ The **span** of a set of vectors is the set of *all possible linear combinations
 
 In other words: what are all the vectors you can reach using only addition and scaling?
 
-![Visual definition of span](/topics/phase-1-math-foundations/linear-algebra/images/span/span-visual.svg)
+![Visual definition of span]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/span/span-visual.svg)
 
 ### 4.1 Span in 2D
 
@@ -111,23 +111,23 @@ The idea becomes even more interesting in three dimensions:
 
 **Two vectors in 3D:** Their span is a **flat sheet (plane) passing through the origin**. You can imagine turning two knobs to change the two scalars — the tip of the resulting vector traces out this flat sheet.
 
-![Two vectors span a plane in 3D](/topics/phase-1-math-foundations/linear-algebra/images/span-3d/two-vectors-span.svg)
+![Two vectors span a plane in 3D]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/span-3d/two-vectors-span.svg)
 
 **Adding a third vector** has two possibilities:
 
 1. **Third vector is already on the plane** — the span doesn't change. You're trapped on that same sheet. The third vector is redundant.
 
-![Third vector already on the plane](/topics/phase-1-math-foundations/linear-algebra/images/span-3d/third-on-plane.svg)
+![Third vector already on the plane]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/span-3d/third-on-plane.svg)
 
 2. **Third vector points in a new direction** — it unlocks access to *every possible 3D vector*. As you scale the third vector, it sweeps the plane through all of space.
 
-![Third vector sweeps through all of 3D space](/topics/phase-1-math-foundations/linear-algebra/images/span-3d/third-off-plane.svg)
+![Third vector sweeps through all of 3D space]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/span-3d/third-off-plane.svg)
 
 This is why:
 - 2 linearly independent vectors in 3D → span a **plane**
 - 3 linearly independent vectors in 3D → span all of **3D space**
 
-![Linear combination of three vectors](/topics/phase-1-math-foundations/linear-algebra/images/span-3d/three-vectors.svg)
+![Linear combination of three vectors]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/span-3d/three-vectors.svg)
 
 ---
 
@@ -144,9 +144,9 @@ In practical terms: one vector (or more) is redundant — it can be expressed as
 - Three vectors in 3D where one lies on the plane of the other two
 - Any set containing the zero vector
 
-![Linearly dependent vectors in 3D](/topics/phase-1-math-foundations/linear-algebra/images/span-3d/dependent-3d.svg)
+![Linearly dependent vectors in 3D]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/span-3d/dependent-3d.svg)
 
-![One vector expressible as linear combination of others](/topics/phase-1-math-foundations/linear-algebra/images/span-3d/dependent-3d-expr.svg)
+![One vector expressible as linear combination of others]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/span-3d/dependent-3d-expr.svg)
 
 ### 5.2 Linearly Independent
 
@@ -158,7 +158,7 @@ If **each vector adds another dimension to the span** — none is redundant — 
 - $\hat{\imath}$ and $\hat{\jmath}$ in 2D
 - $\hat{\imath}$, $\hat{\jmath}$, $\hat{k}$ in 3D
 
-![Linearly independent vectors in 3D](/topics/phase-1-math-foundations/linear-algebra/images/span-3d/independent-3d.svg)
+![Linearly independent vectors in 3D]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/span-3d/independent-3d.svg)
 
 ---
 
@@ -168,7 +168,7 @@ A practical convention for thinking about span:
 
 - **A single vector** → think of it as an **arrow** (has direction + magnitude)
 
-![Vectors as arrows vs. points](/topics/phase-1-math-foundations/linear-algebra/images/introduction/magnitude-direction.svg)
+![Vectors as arrows vs. points]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/introduction/magnitude-direction.svg)
 
 - **A collection of vectors** → think of them as **points** (tips of vectors)
 
@@ -272,7 +272,7 @@ With all three, we now span all of 3D space.
 {% exercise "Reconstructing Coordinates" %}
 Given the linear combination illustrated below where two basis vectors form an orthogonal grid:
 
-![Orthogonal basis grid](/topics/phase-1-math-foundations/linear-algebra/images/questions/orthogonal-basis.svg)
+![Orthogonal basis grid]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/questions/orthogonal-basis.svg)
 
 **What are the scalar values $a$ and $b$ that form the vector $\begin{bmatrix} 7 \\ 4 \end{bmatrix}$?**
 
@@ -313,7 +313,7 @@ Together, these conditions give you a **minimal, complete** set of directions to
 {% exercise "Dependence in 3D" (MCQ) %}
 **Given the span of two vectors $\begin{bmatrix} 0 \\ 3 \\ 2 \end{bmatrix}$ and $\begin{bmatrix} 0 \\ 1 \\ -2 \end{bmatrix}$ illustrated below, which of the following vectors is linearly dependent on them?**
 
-![3D dependent or independent](/topics/phase-1-math-foundations/linear-algebra/images/questions/dependent-or-independent.svg)
+![3D dependent or independent]({{ site.baseurl }}/topics/phase-1-math-foundations/linear-algebra/images/questions/dependent-or-independent.svg)
 
 {% quiz %}
 - A: $\begin{bmatrix} 1 \\ 0 \\ 4 \end{bmatrix}$

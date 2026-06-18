@@ -2,9 +2,26 @@
 title: GenAI From Scratch — Topic Notes
 description: Topic-based study notes for the GenAI From Scratch roadmap
 author: Rexlin
-baseurl: ""
-url: ""
+url: "https://ijaffery.github.io"
+baseurl: "/genai-study-notes"
 markdown: kramdown
+kramdown:
+  math_engine: mathjax
+  math_engine_opts:
+    preview: true
 exclude:
   - README.md
   - Gemfile
+  - Gemfile.lock
+  - _site
+  - .jekyll-cache
+  - .context.md
+  - check_*.py
+  - _fix*.py
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+include:
+  - topics
