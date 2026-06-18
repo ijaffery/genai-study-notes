@@ -1,6 +1,8 @@
 ---
 layout: concept
 title: Span, Linear Combinations & Basis
+permalink: /topics/phase-1-math-foundations/linear-algebra/span/
+---
 subtitle: Building spaces from vectors
 source: https://www.3blue1brown.com/lessons/span/
 source_title: 3Blue1Brown — Essence of Linear Algebra
