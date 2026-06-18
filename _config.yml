@@ -19,6 +19,7 @@ exclude:
   - .context.md
   - check_*.py
   - _fix*.py
+  - vendor
 plugins: [jekyll-watch]
 include:
   - topics
