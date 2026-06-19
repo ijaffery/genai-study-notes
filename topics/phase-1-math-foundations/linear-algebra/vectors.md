@@ -2,7 +2,6 @@
 layout: concept
 title: Vectors
 permalink: /topics/phase-1-math-foundations/linear-algebra/vectors/
----
 subtitle: Three perspectives, coordinate systems, and operations
 source: https://www.3blue1brown.com/lessons/vectors/
 source_title: 3Blue1Brown — Essence of Linear Algebra
