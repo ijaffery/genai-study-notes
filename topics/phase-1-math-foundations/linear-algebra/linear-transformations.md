@@ -2,7 +2,6 @@
 layout: concept
 title: Linear Transformations & Matrices
 permalink: /topics/phase-1-math-foundations/linear-algebra/linear-transformations/
----
 subtitle: Seeing matrices as geometric warps of space
 source: https://www.3blue1brown.com/lessons/linear-transformations/
 source_title: 3Blue1Brown — Essence of Linear Algebra
