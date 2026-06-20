@@ -1,4 +1,6 @@
 source "https://rubygems.org"
 gem "jekyll"
+gem "base64"
 gem "kramdown-parser-gfm"
+gem "bigdecimal"
 gem "webrick"
